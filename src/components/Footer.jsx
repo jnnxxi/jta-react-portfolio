@@ -9,7 +9,7 @@ import {
 
 function Footer() {
   return (
-    <footer className="w-full bg-[#0a192f] text-gray-300 py-10 px-4 ">
+    <footer className="w-full bg-[#000009] text-gray-300 py-10 px-4 ">
       <div className="max-w-[1240px] mx-auto grid lg:grid-cols-3 gap-8">
         <div className="lg:col-span-1">
           <h1 className="text-3xl font-bold text-[#64ffda]">ニンジャ</h1>
