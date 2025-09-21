@@ -53,7 +53,7 @@ function Home() {
 
     return (
         <>
-            <div name="home" className="w-full bg-[#000009] text-white py-24" ref={homeRef}>
+            <div name="home" className="w-full bg-[#000009] text-white py-36" ref={homeRef}>
                 <div className="max-w-[1200px] mx-auto grid grid-cols-1 md:grid-cols-3 items-center px-8 gap-8 md:gap-4">
 
                     <motion.div
@@ -95,7 +95,7 @@ function Home() {
                         </h2>
                         <div>
                             <button className="text-white border-2 px-6 py-3 my-2 hover:bg-[#64ffda] hover:text-black transition rounded-4xl">
-                                <a href="/projects">View Work</a>
+                                <a href="/jta-react-portfolio/projects">View Work</a>
                             </button>
                         </div>
                     </motion.div>

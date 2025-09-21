@@ -11,12 +11,12 @@ import Contact from './pages/Contact';
 function App() {
 
   return (
-      <Router>
+      <Router basename='/jta-react-portfolio'>
       <div>
         <Navbar />
         <Routes>
           <Route path="/" element={<Navigate to="/home" />} />
-          <Route path="/jta-react-portfolio" element={<Navigate to="/home" />} />
+          {/* <Route path="/jta-react-portfolio" element={<Navigate to="/home" />} /> */}
           <Route path="/home" element={<Home /> } />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
