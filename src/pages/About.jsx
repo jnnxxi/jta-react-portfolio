@@ -12,8 +12,15 @@ import {
   FaBootstrap,
   FaAngular,
   FaPhp,
-  FaJs,
+  FaJs, FaGithub, FaGitlab
 } from "react-icons/fa";
+import {
+  SiTailwindcss,
+  SiMongodb,
+  SiMysql,
+  SiPostgresql,
+  SiExpress,
+} from "react-icons/si";
 
 function About() {
   return (
@@ -33,72 +40,101 @@ function About() {
       </section>
 
       {/* Skills Section */}
-      <section className="w-full py-16 px-6 text-[#000009] bg-[#DEFFF2]/10">
-        <h2 className="text-3xl font-bold mb-8 text-center text-[#0FF4C6]">
-          Skills
-        </h2>
-        <div className="w-full sm:w-4/5 lg:w-3/4 mx-auto">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Fullstack",
-                icons: [<FaReact />, <FaNodeJs />, <FaAngular />],
-              },
-              {
-                title: "Automation",
-                icons: [<FaPython />, <FaTerminal />],
-              },
-              {
-                title: "Frontend",
-                icons: [
-                  <FaJs />,
-                  <FaReact />,
-                  <FaAngular />,
-                  <FaBootstrap />,
-                  <FaHtml5 />,
-                  <FaCss3Alt />,
-                ],
-              },
-              {
-                title: "Version Control",
-                icons: [<FaGitAlt />],
-                extra: ["GitHub", "GitLab"],
-              },
-              {
-                title: "Backend",
-                icons: [<FaNodeJs />, <FaJava />, <FaJs />, <FaPhp />],
-              },
-              {
-                title: "Database",
-                icons: [<FaDatabase />],
-              },
-            ].map((skill, idx) => (
-              <div
-                key={idx}
-                className="p-6 rounded-2xl shadow-lg bg-[#DEFFF2] hover:scale-105 transition-transform border border-[#aaf3e4] min-h-[240px] flex flex-col justify-between"
-              >
-                <h3 className="text-xl font-semibold mb-4 text-[#000009]">
-                  {skill.title}
-                </h3>
-                <div className="flex flex-wrap gap-4 text-5xl text-[#0FF4C6]">
-                  {skill.icons.map((icon, i) => (
-                    <span key={i} className="drop-shadow-md">
-                      {icon}
-                    </span>
-                  ))}
-                </div>
-                {skill.extra && (
-                  <div className="mt-4 flex flex-wrap gap-3 font-bold text-[#000009] text-sm">
-                    {skill.extra.map((txt, j) => (
-                      <span key={j}>{txt}</span>
-                    ))}
-                  </div>
-                )}
+<section className="w-full py-16 px-6 text-[#000009] bg-[#DEFFF2]/10">
+  <h2 className="text-3xl font-bold mb-8 text-center text-[#0FF4C6]">
+    Skills
+  </h2>
+  <div className="w-full sm:w-4/5 lg:w-3/4 mx-auto">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {[
+        {
+          title: "Fullstack",
+          skills: [
+            { icon: <FaReact />, name: "React" },
+            { icon: <FaNodeJs />, name: "Node.js" },
+            { icon: <FaAngular />, name: "Angular" },
+            { icon: <FaPhp />, name: "PHP" },
+            { icon: <FaJs />, name: "JavaScript" },
+            { icon: <SiExpress />, name: "Express.js" },
+          ],
+        },
+        {
+          title: "Automation",
+          skills: [
+            { icon: <FaPython />, name: "Python" },
+            { icon: <FaTerminal />, name: "Scripting / Shell" },
+          ],
+        },
+        {
+          title: "Frontend",
+          skills: [
+            { icon: <FaHtml5 />, name: "HTML5" },
+            { icon: <FaCss3Alt />, name: "CSS3" },
+            { icon: <FaBootstrap />, name: "Bootstrap" },
+            { icon: <SiTailwindcss />, name: "TailwindCSS" },
+            { icon: <FaReact />, name: "React" },
+            { icon: <FaAngular />, name: "Angular" },
+            { icon: <FaJs />, name: "JavaScript" },
+          ],
+        },
+        {
+          title: "Version Control",
+           skills: [
+            { icon: <FaGitAlt />, name: "Git" },
+            { icon: <FaGithub />, name: "GitHub" },
+            { icon: <FaGitlab />, name: "GitLab" },
+          ],
+        },
+        {
+          title: "Backend",
+          skills: [
+            { icon: <FaNodeJs />, name: "Node.js" },
+            { icon: <FaJava />, name: "Java" },
+            { icon: <FaPhp />, name: "PHP" },
+            { icon: <SiExpress />, name: "Express.js" },
+          ],
+        },
+        {
+          title: "Database",
+          skills: [
+            { icon: <FaDatabase />, name: "SQL / General" },
+            { icon: <SiMongodb />, name: "MongoDB" },
+            { icon: <SiMysql />, name: "MySQL" },
+            { icon: <SiPostgresql />, name: "PostgreSQL" },
+          ],
+        },
+      ].map((skill, idx) => (
+        <div
+          key={idx}
+          className="p-6 rounded-2xl shadow-lg bg-[#DEFFF2] hover:scale-105 transition-transform border border-[#aaf3e4] min-h-[240px] flex flex-col justify-start"
+        >
+          <h3 className="text-xl font-semibold mb-4 text-[#000009]">
+            {skill.title}
+          </h3>
+          <div className="flex flex-wrap gap-4 text-5xl text-[#0FF4C6] items-start">
+            {skill.skills.map((s, i) => (
+              <div key={i} className="relative group cursor-pointer">
+                {s.icon}
+                {/* Tooltip */}
+                <span className="absolute -top-8 left-1/2 -translate-x-1/2 text-xs px-2 py-1 rounded bg-[#000009] text-white opacity-0 group-hover:opacity-100 transition whitespace-nowrap z-50">
+                  {s.name}
+                </span>
               </div>
             ))}
           </div>
+          {skill.extra && (
+            <div className="mt-4 flex flex-wrap gap-3 font-bold text-[#000009] text-sm">
+              {skill.extra.map((txt, j) => (
+                <span key={j}>{txt}</span>
+              ))}
+            </div>
+          )}
         </div>
-      </section>
+      ))}
+    </div>
+  </div>
+</section>
+
 
       {/* Education Section */}
       <section className="w-full py-16 px-6 bg-[#000009] text-white">
@@ -177,11 +213,10 @@ function About() {
 
               {/* Card */}
               <div
-                className={`sm:w-[45%] p-6 rounded-2xl shadow-lg bg-[#000009] text-[#DEFFF2] ${
-                  idx % 2 === 0
-                    ? "sm:ml-[calc(50%+0.75rem)] text-left"
-                    : "sm:-ml-[calc(-5%+0.75rem)] sm:text-right"
-                }`}
+                className={`sm:w-[45%] p-6 rounded-2xl shadow-lg bg-[#000009] text-[#DEFFF2] ${idx % 2 === 0
+                  ? "sm:ml-[calc(50%+0.75rem)] text-left"
+                  : "sm:-ml-[calc(-5%+0.75rem)] sm:text-right"
+                  }`}
               >
                 <h3 className="text-xl font-semibold text-[#0FF4C6]">
                   {job.company}
@@ -197,6 +232,36 @@ function About() {
           ))}
         </div>
       </section>
+      {/* Request Resume Section */}
+      {/* Request Resume Section */}
+      <section className="w-full py-20 px-6 bg-white text-[#000009]">
+        <div className="max-w-2xl mx-auto text-center">
+          <h2 className="text-3xl font-bold mb-6 text-[#0FF4C6]">
+            Request My Resume
+          </h2>
+          <p className="text-lg mb-8 text-gray-700">
+            Want a copy of my resume? Enter your email below and I’ll send it to you.
+          </p>
+
+          <form className="flex flex-col sm:flex-row gap-4 justify-center">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              className="flex-1 px-4 py-3 rounded-lg border border-[#0FF4C6]/50 bg-white text-[#000009] focus:outline-none focus:ring-2 focus:ring-[#0FF4C6]"
+              required
+            />
+            <button
+              type="submit"
+              className="px-6 py-3 rounded-lg bg-[#0FF4C6] text-white font-semibold hover:bg-[#00C2A8] transition-all shadow-md"
+            >
+              Request Resume
+            </button>
+          </form>
+        </div>
+      </section>
+
+
+
     </div>
   );
 }
