@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import Modal from "../components/Modal";
 import portfolio from '../assets/portfolio.png';
+import techno from '../assets/startup.jpg';
 import music from '../assets/music.png';
 import scheduling from '../assets/scheduling.jpg';
 import verifying from '../assets/verifying.jpg';
@@ -10,6 +11,15 @@ import content from '../assets/content.jpg';
 import booking from '../assets/booking.jpg';
 
 const projects = [
+  {
+    title: "Technosam Corporation Company Website",
+    description: "A responsive company website built with Angular and Bootstrap.",
+    img: techno, // replace with your project image
+    github: "https://github.com/",
+    demo: "https://yourliveproject.com",
+    tech: ["Angular", "Bootstrap", "EmailJS", "git", "github", "gh-pages", "fatcow"]
+    // "EmailJS"
+  },
   {
     title: "Portfolio Website",
     description: "A responsive personal portfolio built with React and TailwindCSS.",
